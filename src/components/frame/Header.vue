@@ -10,11 +10,7 @@
     </b-navbar>
   </div>
 </template>
-<style scoped lang="scss">
-    @import '~assets/styles.scss';
-    #title{
-      color:$primary !important;
-    }
+<style scoped >
 </style>
 <script>
 import Router from 'router'
