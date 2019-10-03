@@ -1,6 +1,6 @@
 <template>   
   <div id="app">
-    <SampleHeader v-show="$route.path =='/Login' || $route.path == '/Register' ||  $route.path == '/'? true: false"></SampleHeader>
+    <SampleHeader></SampleHeader>
     <Appbody></Appbody>
     <SideBar v-show="$route.path === '/Dashboard' || $route.path === '/subjects'|| $route.path === '/Profile' ? true: false"></SideBar>
   </div>

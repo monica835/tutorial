@@ -1,5 +1,5 @@
 <template>
-  <sidebar-menu :menu="menu" />
+  <sidebar-menu :menu="menu" id="side" />
 </template>
  
 <script>
@@ -37,3 +37,9 @@
         }
     }
 </script> 
+<style scoped>
+    #side{
+        margin-bottom: -50px;
+        margin-top: 55px;
+    }
+</style>

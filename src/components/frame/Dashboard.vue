@@ -23,12 +23,14 @@
 <style scoped>
 #card {
   margin-top: 30px;
-  margin-left: 400px;
+  margin-left: 800px;
+  margin-right:800px;
+  box-shadow: 10px 10px 5px blue; 
 }
 .jumbotron{
     padding:20px;
     text-align: center;
-    background-color:lightblue;
+    background-color:grey;
 }
 #image {
   width: 250px;

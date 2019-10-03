@@ -34,7 +34,10 @@
               <td>{{ item.course }}</td>
               <td>{{ item.subjects}}</td>
               <td>{{ item.room }}</td>
-
+             <b-button variant="primary" @click="removeItem"
+           >Remove</b-button>
+            <b-button variant="primary" @click="EditItem"
+           >Edit</b-button>
             </tr>
           </tbody>
         </table>
@@ -87,7 +90,22 @@ export default {
       this.input.course = ""
       this.input.subjects = ""
       this.input.room = ""
-    }
+    },
+    removeItem(){
+      var object = {
+        course: this.input.course,
+        subjects: this.input.subjects,
+        room: this.input.room
+      };
+      this.rows.splice(object,1);
+    },
+    // EditItem(){
+    //    var object = {
+    //     course: this.input.course,
+    //     subjects: this.input.subjects,
+    //     room: this.input.room
+    //   };
+    // }
   }
 };
 </script>

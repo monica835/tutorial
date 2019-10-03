@@ -34,7 +34,10 @@
 }
 #card {
   margin-top: 50px;
-  margin-left: 380px;
+  margin-left: 600px;
+  margin-right:600px;
+  box-shadow: 10px 10px 5px blue; 
+  
 }
 .login_btn{
     color: black;
@@ -59,9 +62,7 @@ export default {
   },
   methods:{
     update: function(){
-      // e.preventDefault();
       AUTH.update(this.username,this.password, this.confirmpassword)
-      // AUTH.update()
     }
   }
 };

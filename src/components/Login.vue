@@ -29,7 +29,7 @@
                         <input type="checkbox">Remember Me
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn float-right login_btn" @click="test()">Submit</button>
+                        <button type="submit" class="btn float-right login_btn" >Submit</button>
                     </div>
                 </form>
             </div>
@@ -137,6 +137,7 @@ input:focus {
 
 <script>
 import AUTH from 'services/auth'
+import Router from 'router'
 export default {
     name: 'Login',
     auth: AUTH,   
@@ -154,8 +155,17 @@ export default {
         },
         onsubmit(e) {
             e.preventDefault();
-            AUTH.login(this.input.username, this.input.password)
+            let user= AUTH.login(this.input.username, this.input.password);
+            if(this.input.username===""|| this.input.password===""){
+                alert("Please provide inputs...")
+            }else{
+                AUTH.setUser(user);
+                if(user!==null){
+                    Router.push('/dashboard');
+                }
+            }
         },
+
         // test(){
         //     let link='http://localhost:3000/user'
         //     jquery.ajax({
