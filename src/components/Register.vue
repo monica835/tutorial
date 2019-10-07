@@ -142,6 +142,7 @@ input:focus {
 
 <script>
 import AUTH from 'services/auth'
+import jquery from 'jquery'
 export default {
     name: 'register',
 	auth:AUTH,
@@ -161,7 +162,20 @@ export default {
             sessionStorage.setItem("password", this.input.password)
             sessionStorage.setItem("confirmpassword",this.input.confirmpassword)
             AUTH.register(this.input.username, this.input.password,this.input.confirmpassword)
+            //let link=`http://localhost:3000/db/update/${this.input.username}/${this.input.password}`
+            let link=`http://localhost:3000/db/create/${this.input.username}/${this.input.password}`
+            //let link=`http://localhost:3000/db/delete`
+            jquery.ajax({
+                url:link,
+                method:'GET',
+                headers:{
+                    'Access-Control-Allow-Origin':'*'
+                }
+            }).then(response=>{
+                alert(response.username)
+            })       
         }
-    }
+    },
+   
 }
 </script>

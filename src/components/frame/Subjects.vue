@@ -27,6 +27,7 @@
               <th scope="col">Courses</th>
               <th scope="col">Subjects</th>
               <th scope="col">Room</th>
+               <th scope="col">Action</th>
             </tr>
           </thead>
          <tbody v-for="(item, index) in this.rows" :key="index">

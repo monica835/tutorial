@@ -22,9 +22,9 @@
 
 <style scoped>
 #card {
-  margin-top: 30px;
-  margin-left: 800px;
-  margin-right:800px;
+    margin-top: 140px;
+    margin-left: 450px;
+    margin-right: 450px;
   box-shadow: 10px 10px 5px blue; 
 }
 .jumbotron{

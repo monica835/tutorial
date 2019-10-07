@@ -41,5 +41,10 @@
     #side{
         margin-bottom: -50px;
         margin-top: 55px;
+        width: 100%;
+        height:96%;
+        overflow-y: auto;
+        overflow-x: hidden;
     }
+
 </style>

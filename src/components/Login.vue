@@ -138,6 +138,7 @@ input:focus {
 <script>
 import AUTH from 'services/auth'
 import Router from 'router'
+// import jquery from 'jquery'
 export default {
     name: 'Login',
     auth: AUTH,   
@@ -149,7 +150,8 @@ export default {
             }
         }
     },
-    methods: {
+    methods: 
+    {
         Signup() {
             window.location.href = '/Register#/Register';
         },
@@ -167,15 +169,18 @@ export default {
         },
 
         // test(){
-        //     let link='http://localhost:3000/user'
+        //     let link=`http://localhost:3000/user`
         //     jquery.ajax({
         //         url:link,
-        //         method:'POST',
+        //         method:'GET',
         //         headers:{
         //             'Acess-Control-Allow-Origin':'*'
         //         }
+        //     }).then(response => {
+        //         alert(response.username)
         //     })
-        }
-};
+        // },
+}
+}
 
 </script>
