@@ -4,8 +4,10 @@
     <div class="jumbotron">
       <h1>Dashboard</h1>
     </div>
+    <b-col></b-col>
+    <b-col>
     <div id="card">
-      <b-card no-body class="overflow-hidden" style="max-width: 540px;">
+      <b-card no-body class="overflow-hidden" style="max-width: 540px; box-shadow: 10px 10px 5px blue; ">
         <center>
           <b-card-img id="image" :src="require('assets/user.jpg')" class="rounded-0"></b-card-img>
           <b-row no-gutters>
@@ -17,6 +19,8 @@
         </center>
       </b-card>
     </div>
+    </b-col>
+    <b-col></b-col>
   </div>
 </template>
 
@@ -24,8 +28,8 @@
 #card {
     margin-top: 140px;
     margin-left: 450px;
-    margin-right: 450px;
-  box-shadow: 10px 10px 5px blue; 
+    margin-right: 450px
+ 
 }
 .jumbotron{
     padding:20px;

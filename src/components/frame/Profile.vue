@@ -4,8 +4,10 @@
     <div class="jumbotron">
       <h1>Personal Information</h1>
     </div>
+    <b-col></b-col>
+    <b-col>
     <div id="card">
-      <b-card no-body class="overflow-hidden" style="max-width: 540px;">
+      <b-card no-body class="overflow-hidden" style="max-width: 540px;  box-shadow: 10px 10px 5px blue; ">
         <b-row no-gutters>
           <b-col md="6">
             <b-card-img :src="require('assets/user.jpg')" class="rounded-0"></b-card-img>
@@ -18,13 +20,16 @@
                  <h6 type="password">Password: {{password}}</h6>
                 <h6 type="password">Confirm Password: {{confirmpassword}}</h6>
               </b-card-text>
-              <button @click='update' class="btn login_btn" >Update</button>
+              <button class="btn login_btn" @click="update()">Update</button>
             </b-card-body>
           </b-col>
         </b-row>
       </b-card>
     </div>
+    </b-col>
+    <b-col></b-col>
   </div>
+
 </template>
 <style>
 .jumbotron{
@@ -36,7 +41,7 @@
   margin-top: 50px;
   margin-left: 600px;
   margin-right:600px;
-  box-shadow: 10px 10px 5px blue; 
+
   
 }
 .login_btn{

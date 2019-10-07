@@ -29,7 +29,7 @@
                         <input type="checkbox">Remember Me
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn float-right login_btn" >Submit</button>
+                        <button type="submit" class="btn float-right login_btn"  >Submit</button>
                     </div>
                 </form>
             </div>
@@ -140,7 +140,7 @@ import AUTH from 'services/auth'
 import Router from 'router'
 // import jquery from 'jquery'
 export default {
-    name: 'Login',
+    name: 'login',
     auth: AUTH,   
     data() {
         return {
@@ -153,7 +153,7 @@ export default {
     methods: 
     {
         Signup() {
-            window.location.href = '/Register#/Register';
+            window.location.href = '/register';
         },
         onsubmit(e) {
             e.preventDefault();

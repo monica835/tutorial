@@ -18,6 +18,10 @@
           <br>
           <b-button variant="primary" @click="addItem"
            >Add Subject And Course</b-button>
+           <br><br>
+           <br><br>
+           <b-form-input v-model="deletecourse" id="delete" size="lg" placeholder="Type subject to remove"></b-form-input><br>
+          <b-button variant="primary" @click="remove">Remove Subject</b-button>
         </b-form-group>
       </b-card>
       <b-card text-align id="card1" img-top tag="article" style="max-width: 40rem;" class="mb-2">
@@ -27,7 +31,6 @@
               <th scope="col">Courses</th>
               <th scope="col">Subjects</th>
               <th scope="col">Room</th>
-               <th scope="col">Action</th>
             </tr>
           </thead>
          <tbody v-for="(item, index) in this.rows" :key="index">
@@ -35,16 +38,13 @@
               <td>{{ item.course }}</td>
               <td>{{ item.subjects}}</td>
               <td>{{ item.room }}</td>
-             <b-button variant="primary" @click="removeItem"
-           >Remove</b-button>
-            <b-button variant="primary" @click="EditItem"
-           >Edit</b-button>
             </tr>
           </tbody>
         </table>
-      </b-card>
-    </center>
-  </div>
+        <br>
+</b-card>
+</center> 
+</div>
 </template>
 
 
@@ -61,7 +61,7 @@
    background-color:lightblue;
 }
 th{
-  background-color:pink;
+  background-color:lightblue;
 }
 </style>
 <script>
@@ -73,6 +73,7 @@ export default {
    data() {
     return {
         rows:[],
+        deletecourse:"",
         input: {
         course: "",
         subjects: "",
@@ -92,21 +93,43 @@ export default {
       this.input.subjects = ""
       this.input.room = ""
     },
-    removeItem(){
-      var object = {
-        course: this.input.course,
-        subjects: this.input.subjects,
-        room: this.input.room
-      };
-      this.rows.splice(object,1);
+    remove(){
+      // var object = {
+      //   course: this.input.course,
+      //   subjects: this.input.subjects,
+      //   room: this.input.room
+      // };
+      // this.rows.splice(object,1);
+       for(let i = 0; i < this.rows.length; i++){
+           if(this.rows[i].subjects === this.deletecourse){
+              this.rows.splice(this.rows.indexOf(this.rows[i].subjects),1)
+           }
+           
+        }
     },
-    // EditItem(){
-    //    var object = {
-    //     course: this.input.course,
-    //     subjects: this.input.subjects,
-    //     room: this.input.room
-    //   };
-    // }
-  }
+    Edit(){
+      var docs = document.getElementById('editModal');
+      docs.style.display='block'
+      },
+      close(){
+          var editM = document.getElementById('editModal')
+				editM.style.display = "none";
+				this.count--
+      },
+    submitEdit(){
+      for(var i = 0; i< this.rows.length; i++){
+					if(this.rows[i].courseName == this.newcourseName){
+            this.rows[i].courseName = this.input.courseName
+            this.rows[i].courseName = this.input.courseName
+						this.rows[i].year = this.input.year
+						var row = document.getElementById('row');
+						row.cells[0].innerHTML = this.input.newcourseName
+						row.cells[1].innerHTML = this.rows[i].year
+					}
+				}
+				var editM = document.getElementById('editModal')
+				editM.style.display = "none";
+    }
+    }
 };
 </script>
