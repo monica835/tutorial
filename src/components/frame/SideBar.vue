@@ -18,6 +18,11 @@
                         icon: 'fa fa-clipboard-list'
                     },
                     {
+                        href: '/timeline',
+                        title: 'Timeline',
+                        icon: 'fa fa-clipboard-list'
+                    },
+                    {
                         href: '/profile',
                         title: 'Profile',
                         icon: 'fa fa-user'

@@ -56,6 +56,14 @@ export default {
             tokenRequired: true
         }
     },
+    {
+        path: '/timeline',
+        name: 'timeline',
+        component: resolve => require(['components/Timeline.vue'], resolve),
+        meta: {
+            tokenRequired: false
+        }
+    },
     
     ]
 

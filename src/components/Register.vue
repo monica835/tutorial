@@ -18,6 +18,12 @@
                         </div>
                         <input type="text" class="form-control" placeholder="username" name="username" v-model="input.username" required>
                     </div>
+                     <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        </div>
+                        <input type="email" class="form-control" placeholder="email" name="email" v-model="input.email" required>
+                    </div>
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-key"></i></span>
@@ -38,14 +44,14 @@
                     </div>
                 </form>
             </div>
-            <div class="card-footer">
+            <!-- <div class="card-footer">
                 <div class="d-flex justify-content-center links">
                     Don't have an account?<a href='/register'>Sign Up</a>
                 </div>
                 <div class="d-flex justify-content-center">
                     <a href="#">Forgot your password?</a>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
@@ -150,6 +156,7 @@ export default {
         return {
             input: {
                 username: "",
+                email:"",
                 password: "",
                 confirmpassword: ""
             }
@@ -159,12 +166,14 @@ export default {
         onsubmit(e) {
             e.preventDefault();
             sessionStorage.setItem("username", this.input.username)
+            sessionStorage.setItem("password", this.input.email)
             sessionStorage.setItem("password", this.input.password)
             sessionStorage.setItem("confirmpassword",this.input.confirmpassword)
             AUTH.register(this.input.username, this.input.password,this.input.confirmpassword)
-            //let link=`http://localhost:3000/db/update/${this.input.username}/${this.input.password}`
-            //let link=`http://localhost:3000/db/create/${this.input.username}/${this.input.password}`
-            let link=`http://localhost:3000/db/delete`
+            //let link=`http://localhost:3000/db/update/${this.input.username}/${this.input.email}/${this.input.password}`
+            let link=`http://localhost:3000/db/create/${this.input.username}/${this.input.email}/${this.input.password}`
+            //let link=`http://localhost:3000/db/delete`
+            //let link=`http://localhost:3000`
             jquery.ajax({
                 url:link,
                 method:'GET',
