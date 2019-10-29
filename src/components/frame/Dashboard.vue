@@ -41,7 +41,6 @@
   height: 220px;
 }
 </style>
-
 <script>
 import SideBar from 'components/frame/SideBar.vue'
 export default {

@@ -167,7 +167,6 @@ export default {
                 }
             }
         },
-
         // test(){
         //     let link=`http://localhost:3000/user`
         //     jquery.ajax({
